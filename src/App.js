@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-
+import { useState } from 'react';
 function App() {
+  const [name, setName] = useState('');
+  const [name2, setName2] = useState('');
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
         <form action="../../post" method="post"
           className="form">
-          <button type="submit">Connected?</button>
+          <label>name:</label>
+          <input value={name} onChange={e => setName(e.target.value)} id='name' name='name' /><br />
+          <label>name2:</label>
+          <input value={name2} onChange={e => setName2(e.target.value)} id='name' name='name2' /><br />
+          <button type="submit" >click</button>
         </form>
       </header>
     </div>
